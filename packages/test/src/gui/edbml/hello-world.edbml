@@ -1,0 +1,19 @@
+/**
+ * The most basic test we can imagine.
+ */
+export default function(message) {
+	<blockquote>${message}</blockquote>
+	confirmMultiline();
+}
+
+/**
+ * Just testing that the EDBML compiler supports `+` both first and last.
+ */
+function confirmMultiline() {
+	<ul>		
+		<li>The compiler supports ending plus +
+			to continue HTML on the next line</li>
+		<li>The compiler also supports leading plus
+			+ to continue HTML on the next line</li>
+	</ul>
+}

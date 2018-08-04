@@ -1,0 +1,66 @@
+{
+	"name": "dataplastique",
+	"version": "0.0.1",
+	"module": "dist/index.js",
+	"bin": {
+		"edbml": "dist/bin/edbml-cli.js"
+	},
+	"dependencies": {
+		"callsite": "^1.0.0",
+		"glob": "~7.1.1",
+		"parse5": "^3.0.3",
+		"prettier": "^1.11.0"
+	},
+	"note": "Those (non-dev) dependencies are used by @dataplastique/edbml-cli project!",
+	"devDependencies": {
+		"@babel/cli": "^7.0.0-beta.51",
+		"@babel/core": "^7.0.0-beta.51",
+		"@babel/plugin-proposal-class-properties": "^7.0.0-beta.51",
+		"@babel/plugin-proposal-decorators": "^7.0.0-beta.51",
+		"@babel/plugin-proposal-do-expressions": "^7.0.0-beta.51",
+		"@babel/plugin-proposal-nullish-coalescing-operator": "^7.0.0-beta.51",
+		"@babel/plugin-proposal-object-rest-spread": "^7.0.0-beta.51",
+		"@babel/plugin-proposal-optional-chaining": "^7.0.0-beta.54",
+		"@babel/plugin-proposal-pipeline-operator": "^7.0.0-beta.51",
+		"@babel/preset-env": "^7.0.0-beta.51",
+		"babel-eslint": "^7.2.3",
+		"eslint": "^3.19.0",
+		"eslint-config-prettier": "^1.7.0",
+		"husky": "^0.13.3",
+		"install": "^0.10.4",
+		"jasmine": "^2.99.0",
+		"lerna": "^2.11.0",
+		"lint-staged": "^3.4.0",
+		"node-static": "^0.7.10",
+		"postcss-svg": "^2.4.0",
+		"prettier": "^1.12.1",
+		"rollup": "^0.60.7",
+		"rollup-plugin-babel": "^4.0.0-beta.5",
+		"rollup-plugin-node-resolve": "^3.3.0"
+	},
+	"scripts": {
+		"init": "lerna bootstrap && lerna run prebuild",
+		"build": "npm run init && lerna run build",
+		"build-with-docs!": "&& lerna run postbuild",
+		"build:docs": "lerna bootstrap && lerna run postbuild",
+		"dist": "rm -f dist/index.js && npm run build && npm run copy:lib && npm run copy:bin && npm run touch",
+		"copy:lib": "cp packages/dataplastique/dist/index.js dist/index.js",
+		"copy:bin": "mkdir -p bin && cp packages/edbml-cli/bin/edbml-cli.js bin/edbml-cli.js",
+		"test": "npm run build && cd packages/test && npm run build-tests",
+		"test:iso": "npm run build && cd packages/test && npm run build-tests:iso",
+		"test:web": "npm run build && cd packages/test && npm run build-tests:web",
+		"lint": "eslint \"packages/*/src/**/*.js\"",
+		"nice": "prettier --write --use-tabs --single-quote --print-width 80 \"packages/*/src/**/*.js\"",
+		"docs": "node --experimental-modules packages/docs/bin/docs.mjs packages/*/src -d docs",
+		"http:docs": "static docs -H '{\"Cache-Control\": \"no-cache, must-revalidate\"}'",
+		"http:test": "static packages/test -H '{\"Cache-Control\": \"no-cache, must-revalidate\"}'",
+		"precommit": "lint-staged",
+		"touch": "mkdir -p dist/.watch && touch -am dist/.watch/.done && echo 'DONE'"
+	},
+	"lint-staged": {
+		"packages/*/src/**/*.js": [
+			"prettier --write --use-tabs --single-quote --print-width 80",
+			"git add"
+		]
+	}
+}

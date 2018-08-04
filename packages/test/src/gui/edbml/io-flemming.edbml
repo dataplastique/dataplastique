@@ -1,0 +1,8 @@
+/**
+ * @param {NumberCollection} numbers
+ */
+export default function(numbers) {
+	if (numbers[3] === Math.PI) {
+		<h1>OK</h1>
+	}
+}

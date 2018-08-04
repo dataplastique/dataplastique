@@ -1,0 +1,16 @@
+/**
+ * TODO: NodeList
+ * @param {Spirit} spi
+ * @param {Element} elm
+ * @param {DocumentFragment} frag
+ */
+export default function(element, fragment) {
+	const simple = ['a', 'b', 'c'];
+	<ul>
+		<li>Simple ${simple[0]}</li>
+		<li class="element">Before ${element} after</li>
+		<li>Simple ${simple[1]}</li>
+		<li class="fragment">Before ${fragment} after</li>
+		<li>Simple ${simple[2]}</li>
+	</ul>
+}

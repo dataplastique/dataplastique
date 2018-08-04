@@ -1,0 +1,11 @@
+node_modules
+bin
+dist/*
+!dist/package.json
+!dist/index.d.ts
+packages/*/dist
+*.edbml.js
+edbml-cli.js
+npm-debug*
+lerna-debug.log
+packages/**/package-lock.json

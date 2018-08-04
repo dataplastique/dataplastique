@@ -1,0 +1,7 @@
+/**
+ * Finally output the string.
+ * @param {string} string
+ */
+export default function(string) {
+	<h1>${string}</h1>
+}

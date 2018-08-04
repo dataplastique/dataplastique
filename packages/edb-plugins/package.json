@@ -1,0 +1,9 @@
+{
+  "name": "@dataplastique/edb-plugins",
+  "version": "0.0.1",
+  "module": "src/index.js",
+  "dependencies": {
+  	"@dataplastique/edb": "0.0.1",
+    "@dataplastique/util": "0.0.1"
+  }
+}

@@ -1,0 +1,80 @@
+export default function(scenario) {
+	switch(scenario) {
+		case 0:
+			<ul>
+				<li><div guid="A"></div></li>
+				<li><div guid="B"></div></li>
+				<li><div guid="C"></div></li>
+				<li><div guid="D"></div></li>
+				<li><div guid="E"></div></li>
+				<li><div guid="F"></div></li>
+				<li><div guid="G"></div></li>
+			</ul>
+			break;
+		case 1:
+			<menu>
+				<div guid="A"></div>
+				<div guid="B"></div>
+				<div guid="C"></div>
+			</menu>
+			<article>
+				<div guid="D"></div>
+				<div guid="E"></div>
+				<section>
+					<div guid="F"></div>
+				</section>
+			</article>
+			<div guid="G"></div>
+			break;
+		case 2:
+			<article>
+				<section>
+					<div guid="G"></div>
+				</section>
+				<menu>
+					<div guid="C"></div>
+					<div guid="D">
+						<nav>
+							<div guid="B"></div>
+							<div guid="E">
+								<div guid="F"></div>
+								<div guid="A"></div>
+							</div>
+						</nav>
+					</div>
+				</menu>
+			</article>
+			break;
+		case 3:
+			<div guid="D">
+				<div guid="G">
+					<table>
+						<tr>
+							<td><div guid="C"></div></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div guid="B"></div>
+			<div guid="E"></div>
+			<div guid="A">
+				<div guid="F"></div>
+			</div>
+			break;
+		case 4:
+			<div guid="A">
+				<div guid="B">
+					<div guid="C">
+						<div guid="D">
+							<div guid="E">
+								<div guid="F">
+									<div guid="G"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			break;
+	}
+}

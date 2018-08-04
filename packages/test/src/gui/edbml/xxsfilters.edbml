@@ -1,0 +1,12 @@
+/**
+ * @param {string} text
+ * @param {string} attr
+ * @param {string} href
+ * @param {string} src
+ */
+export default function(text, attr, href, src) {
+	<a href="${href}" title="${attr}">
+		<img src="${src}"/>
+		<span>Hello ${text} and hello again ${text} so there.</span>
+	</a>
+}

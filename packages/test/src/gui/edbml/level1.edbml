@@ -1,0 +1,9 @@
+import level2 from './level2.edbml.js';
+
+/**
+ * Delegate to level two.
+ * @param {string} string
+ */
+export default function(string) {
+	level2(string);
+}

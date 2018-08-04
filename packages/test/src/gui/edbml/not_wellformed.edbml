@@ -1,0 +1,10 @@
+export default function() {
+	<p>Well-formed</p>
+	<p>Well-formed</p>
+	<p>Well-formed</p>
+	<p>Well-formed</p>
+	<p>Well-formed</p>
+	<p>Well-formed</p>
+	<p>Well-formed</p>
+	<footer>Not well-formed :(</header>
+}

@@ -1,0 +1,34 @@
+/**
+ * @param {number} scenario
+ * @param {number} [value]
+ */
+export default function(scenario, value) {
+	const spirit = this;
+	switch(scenario) {
+		case 0:
+			<button guid="button" on:click="${spirit.check = value || 'OK'}">Button</button>
+			break;
+		case 1:
+			<button guid="button">Button</button>
+			break;
+		case 2:
+			<p>Gone!</p>
+			break;
+		case 3:
+			externalized(scenario, spirit);
+			break;
+	}
+}
+
+/**
+ * Just to confirm that callbacks can be resolved outside the `export` function.
+ * @param {number} scenario
+ * @param {Spirit} spirit
+ */
+function externalized(scenario, spirit) {
+	<button guid="button" +
+		on:click="${spirit.check = 'still OK'}" +
+		on:focus="${spirit.check = 'okeydokey'}">
+			<span>Button</span>
+	</button>
+}

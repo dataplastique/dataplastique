@@ -1,0 +1,11 @@
+{
+	"name": "@dataplastique/gui-plugins",
+	"version": "0.0.1",
+	"module": "src/index.js",
+	"dependencies": {
+		"@dataplastique/util": "0.0.1",
+		"@dataplastique/edb": "0.0.1",
+		"@dataplastique/gui": "0.0.1",
+		"@dataplastique/edbml-runtime": "0.0.1"
+	}
+}

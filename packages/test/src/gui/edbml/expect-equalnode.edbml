@@ -1,0 +1,244 @@
+/**
+ * Resulting HTML output must be manually synchronized with the test!
+ */
+export default function(scenario) {
+	switch(scenario) {
+		case 0:
+			<div guid="table">
+				<div guid="row0">
+					<div guid="A"></div>
+					<div guid="B"></div>
+					<div guid="C"></div>
+					<div guid="D"></div>
+					<div guid="E"></div>
+					<div guid="F"></div>
+					<div guid="G"></div>
+				</div>
+				<div guid="row1">
+					<div guid="cell11"></div>
+					<div guid="cell12"></div>
+					<div guid="cell13"></div>
+				</div>
+				<div guid="row2">
+					<div guid="cell21"></div>
+					<div guid="cell22"></div>
+					<div guid="cell23"></div>
+				</div>
+				<div guid="row3">
+					<div guid="cell31">Cell is here</div>
+					<div guid="cell32"></div>
+					<div guid="cell33"></div>
+				</div>
+				<div guid="row4">
+					<div guid="cell41"></div>
+					<div guid="cell42"></div>
+					<div guid="cell43"></div>
+				</div>
+				<div guid="row5">
+					<div guid="cell51"></div>
+					<div guid="cell52"></div>
+					<div guid="cell53"></div>
+				</div>
+			</div>
+			break;
+		case 1:
+			<section>Section was added</section>
+			<div guid="table" class="addedclassname">
+				<div guid="row0">
+					<div guid="A"></div>
+					<div guid="B"></div>
+					<div guid="C"></div>
+					<div guid="D"></div>
+					<div guid="E"></div>
+					<div guid="F"></div>
+					<div guid="G"></div>
+				</div>
+				<div guid="row1">
+					<div guid="cell11"></div>
+					<div guid="cell12">Text was added</div>
+					<div guid="cell13">Text was added</div>
+				</div>
+				<div guid="row2">
+					<div guid="cell21"></div>
+					<div guid="cell22"></div>
+					<div guid="cell23">Text was added</div>
+				</div>
+				<div guid="row3">
+					<div guid="cell32"></div>
+					<div guid="cell31">Cell was moved</div>
+					<div guid="cell33"></div>
+				</div>
+				<section>
+					<div guid="row4">
+						<div guid="cell41"></div>
+						<div guid="cell42"></div>
+						<div guid="cell43"></div>
+						<div guid="cell44">Cell was added</div>
+						<div guid="cell45">Cell was added</div>
+					</div>
+					<div guid="row5">
+						<div guid="cell51"></div>
+						<div guid="cell52"></div>
+						<div guid="cell53"></div>
+					</div>
+				</section>
+			</div>
+			break;
+		case 2:
+			console.log('(scenario 2)');
+			<div guid="table">
+				<div guid="row1">
+					<div guid="cell11"></div>
+					<div guid="cell12">Text was changed</div>
+					<div guid="cell13">
+						<div guid="row5">
+							<section>
+								<div guid="cell51"></div>
+								<div guid="cell52"></div>
+								<div guid="cell53"></div>
+							</section>
+						</div>
+					</div>
+				</div>
+				<div guid="row2">
+					<div guid="cell21">
+						<div guid="cell23">Text was changed and cell was moved</div>
+					</div>
+					<div guid="cell22"></div>
+				</div>
+				<div guid="row3">
+					<div guid="cell31">Cell was moved back</div>
+					<div guid="cell32"></div>
+					<div guid="cell33"></div>
+				</div>
+				<div guid="row4">
+					<div guid="cell41"></div>
+					<div guid="cell42"></div>
+					<div guid="cell43"></div>
+				</div>
+			</div>
+			break;
+		case 3:
+			console.log('(scenario 3)');
+			<div guid="table" title="addedtitle">
+				<div guid="row2">
+					<div guid="cell21">
+						<div guid="cell23">
+							<div guid="row1">
+								<div guid="cell11">Row was moved</div>
+								<div guid="cell12"></div>
+								<div guid="cell13"	>
+									<div guid="row5">
+										<div guid="cell51">
+											<div guid="row3">
+												<div guid="cell31">Row was moved</div>
+												<section>
+													<div guid="cell32"></div>
+													<div guid="cell33"></div>
+												</section>
+												<section></section>
+											</div>
+											<div guid="row4">
+												<div guid="cell41"></div>
+												<div guid="cell42">
+													<div guid="cell22">Cell was moved</div>
+												</div>
+												<div guid="cell43"></div>
+											</div>
+										</div>
+										<div guid="cell52"></div>
+										<div guid="cell53"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			break;
+		case 4:
+			<div guid="row1" class="addedclassname">
+				<div guid="row2">
+					<div guid="row3">
+						<div guid="row4">
+							<div guid="row5">
+								<div guid="table">
+									<div guid="cell11">
+										<div guid="cell51"></div>
+										<div guid="cell52"></div>
+										<div guid="cell53"></div>
+									</div>
+								</div>
+								<section>
+									<div guid="cell12"></div>
+									<div guid="cell13"></div>
+									<div guid="cell21"></div>
+									<div guid="cell22"></div>
+									<div guid="cell23"></div>
+									<div guid="cell31"></div>
+									<div guid="cell32"></div>
+									<div guid="cell33"></div>
+								</section>
+							</div>	
+						</div>	
+					</div>	
+				</div>
+			</div>
+			<div guid="cell41"></div>
+			<div guid="cell42"></div>
+			<div guid="cell43"></div>
+			break;
+		case 5:
+			<article>
+				<section class="head">
+					<div class="docs">
+						<h1><p>Collection</p></h1>
+					</div>
+					<pre class="code"></pre>
+				</section>
+				<section data-line="0" class="intro" >
+					<div class="docs">
+						<div class="desc"></div>
+					</div>
+					<pre class="code">
+					</pre>
+				</section>
+				<section data-line="2" >
+					<div class="docs">
+						<div class="desc">
+							<p>Base collection.</p>
+						</div>
+					</div>
+					<pre class="code">
+					</pre>
+				</section>
+			</article>
+			break;
+		case 6:
+			<article>
+				<section class="head">
+					<div class="docs">
+						<h1><p>Model</p></h1>
+					</div>
+					<pre class="code"></pre>
+				</section>
+				<section data-line="0" class="intro" >
+					<div class="docs">
+						<div class="desc"></div>
+					</div>
+					<pre class="code">
+					</pre>
+				</section>
+				<section data-line="2" >
+					<div class="docs">
+						<div class="desc">
+							<p>Base model.</p>
+						</div>
+					</div>
+					<pre class="code">
+					</pre>
+				</section>
+			</article>
+			break;
+	}
+}

@@ -1,0 +1,16 @@
+{
+	"name": "dataplastique",
+	"version": "0.0.1",
+	"module": "dist/index.js",
+	"scripts": {
+		"build": "rollup --config"
+	},
+	"dependencies": {
+		"@dataplastique/util": "0.0.1",
+		"@dataplastique/edb": "0.0.1",
+		"@dataplastique/edb-plugins": "0.0.1",
+		"@dataplastique/gui": "0.0.1",
+		"@dataplastique/gui-plugins": "0.0.1",
+		"@dataplastique/edbml-runtime": "0.0.1"
+	}
+}

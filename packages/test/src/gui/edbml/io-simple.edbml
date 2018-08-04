@@ -1,0 +1,10 @@
+/**
+ * @param {PersonModel} person
+ * @param {DonkeyModel} donkey
+ */
+export default function(person, donkey) {
+	const relationship = person.pet === donkey ? 'colleagues' : 'friends';
+	<h1>The adventures of ${person.name}</h1>
+	<p>There once was a man called ${person.name}. He met a donkey +
+	called ${donkey.name} and they soon became ${relationship}.</p>
+}

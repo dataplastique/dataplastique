@@ -1,0 +1,64 @@
+/**
+ * @param {TreeModel} [tree]
+ */
+export default function(tree) {
+	if(tree) {
+		<header guid="header">
+			renderHeader(tree);
+		</header>
+		<nav guid="nav">
+			renderNodes(tree.nodes, tree.search);
+		</nav>
+	}
+}
+
+// Scoped ......................................................................
+
+/**
+ * @param {TreeModel} tree
+ */
+function renderHeader(tree) {
+	<form>
+		<input placeholder="Search filename" guid="search" type="text" +
+			autocomplete="off" spellcheck="false" placeholder="Search files" +
+			value="${tree.search}" on:input="${tree.search = value}"/>
+	</form>
+	<menu>
+		<li>
+			<button class="icon icon-sidebar" title="Toggle SideBar"></button>
+		</li>
+	</menu>
+}
+
+/**
+ * @param {Collection<FileModel|FolderModel>} nodes
+ * @param {string} search
+ */
+function renderNodes(nodes, search) {
+	const visible = node => !search || node.matches(search);
+	const present = node => renderNode(node, search);
+	<ul>
+		nodes.filter(visible).forEach(present);
+	</ul>
+}
+
+/**
+ * @param {FileModel|FolderModel} next
+ * @param {string} search
+ */
+function renderNode(node, search) {
+	<li guid="${node.$id}" class="${node.classname()}">
+		switch (node.constructor.name) {
+			case 'FileModel':
+				<a class="label" href="#${node.src}">${node.name}</a>
+				break;
+			case 'FolderModel':
+				<span guid="${node.$id}-span" class="label" +
+					on:click="${node.open = !node.open}">${node.name}</span>
+				if(search || node.open) {
+					renderNodes(node.nodes, search);
+				}
+				break;
+		}
+	</li>
+}

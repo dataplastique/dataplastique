@@ -1,0 +1,28 @@
+{
+	"name": "@dataplastique/docs",
+	"version": "0.0.1",
+	"dependencies": {
+		"prettier": "^1.11.0",
+		"prismjs": "^1.11.0",
+		"showdown": "^1.8.6"
+	},
+	"scripts": {
+		"postbuild": "edbml src/js/spirits/ && npm run stylesheet && rollup --config rollup.config.node.js && rollup --config rollup.config.web.js",
+		"stylesheet": "postcss src/css/index.css --use postcss-cssnext postcss-import postcss-svg --output web/index.css"
+	},
+	"devDependencies": {
+		"dataplastique": "0.0.1",
+		"@dataplastique/edbml-cli": "0.0.1",
+		"glob": "^7.1.1",
+		"postcss": "^6.0.19",
+		"postcss-cli": "^4.1.1",
+		"postcss-cssnext": "^3.1.0",
+		"postcss-import": "^11.1.0"
+	},
+	"browserslist": [
+		"last 2 Firefox versions",
+		"last 2 Chrome versions",
+		"last 1 Safari versions",
+		"last 1 Edge versions"
+	]
+}

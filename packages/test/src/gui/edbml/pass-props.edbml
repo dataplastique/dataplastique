@@ -1,0 +1,27 @@
+const fullname = model => `${model.firstname} ${model.lastname}`;
+
+export default function pass(model) {
+	elmprops(model);
+	elmcalls(model);
+	spiprops(model); // TODO: support
+	spicalls(model); // TODO: support
+}
+
+function elmprops(model) {
+	<div guid="elm-props" do:elm="${elm.title = fullname(model)}"></div>
+}
+
+function elmcalls(model) {
+	<div guid="elm-calls" do:elm="${elm.setAttribute('title', fullname(model))}"></div>
+}
+
+function spiprops(model) {
+	<my-configurable-spirit guid="spi-props" do:gui="${gui.usermodel = model}">	
+	</my-configurable-spirit>
+}
+
+function spicalls(model) {
+	const update = gui => gui.username(model.firstname, model.lastname);
+	<my-configurable-spirit guid="spi-calls" do:gui="${update(gui)}">
+	</my-configurable-spirit>
+}

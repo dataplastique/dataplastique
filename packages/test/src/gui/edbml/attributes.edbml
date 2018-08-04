@@ -1,0 +1,32 @@
+/**
+ * Testing the hacky @attribute syntax.
+ */
+export default function() {
+	singleAttributes();
+	bulkAttributes();
+}
+
+/**
+ * Single attributes.
+ */
+function singleAttributes() {
+	@id = 'myid';
+	@class = 'myclass';
+	@href = null;
+	@src = undefined;
+	@data-number = 23;
+	@data-boolean = true;
+	<p @id @class @href @src @data-number @data-boolean></p>
+}
+
+/**
+ * Multiple attributes.
+ */
+function bulkAttributes() {
+	@tableprops = {
+		summary: 'Multiple @attributes can be declared with an object like this',
+		cellspacing: 2,
+		cellpadding: 2
+	};
+	<table @tableprops></table>
+}

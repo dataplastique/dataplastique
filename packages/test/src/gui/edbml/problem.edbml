@@ -1,0 +1,23 @@
+/**
+ * @param {number} scenario
+ * @param {Array<string>} list
+ */
+export default function(list, list2) {
+	const last = list.length - 1;
+	<ul guid="list">
+		list.forEach((id, i) => {
+			<li guid="${id}">
+				<span>OUTER-${id}</span>
+				if (list2 && i === last) {
+					<ul guid="sublist">
+						list2.forEach(id => {
+							<li guid="${id}">
+								<span>INNER-${id}</span>
+							</li>
+						});
+					</ul>
+				}
+			</li>
+		});
+	</ul>
+}

@@ -1,0 +1,99 @@
+import hilite from './hilite';
+import markup from './markup';
+
+/**
+ * @param {DocModel} [doc]
+ */
+export default function(doc) {
+	<article>
+		if (doc) {
+			<h1>${doc.title}</h1>
+			const syntax = hilite(doc.type);
+			switch(doc.type) {
+				case 'text/javascript':
+				case 'text/edbml':
+					renderScript(doc, syntax);
+					break;
+			}
+		}
+	</article>
+}
+
+// Scoped ......................................................................
+
+/**
+ * @param {DocumentModel} doc
+ * @param {Collection<ChapterModel>} doc.chapters
+ * @param {Function} syntax
+ */
+function renderScript({ chapters }, syntax) {
+
+	chapters.forEach(renderChapter);
+
+	/**
+	 * Render chapter with potential title.
+	 * @param {ChapterModel} chapter
+	 */
+	function renderChapter({ title, sections, tabs }) {
+		if(title) {
+			renderSection({ desc: '## ' + title, tabs });
+		}
+		sections.forEach(renderSection);
+	}
+	
+	/**
+	 * @param {SectionModel|Object} section
+	 */
+	function renderSection({ desc, code, tags, line, tabs }) {
+		@data-line = line;
+		<section @data-line>
+			<div class="docs">
+				<div class="desc">
+					out(markup(desc));
+				</div>
+				renderTags(tags);
+			</div>
+			<div class="code">
+				<code>
+					out(code ? syntax(code) : '');
+					<span class="indent">
+						out(tabs);
+					</span>
+				</code>
+			</div>
+		</section>
+	}
+
+	/**
+	 * @param {Collection<TagModel>} tags
+	 */
+	function renderTags(tags) {
+		if(tags && tags.length) {
+			<ol class="tags">
+				tags.forEach(renderTag);
+			</ol>
+		}
+	}
+
+	/**
+	 * @param {TagModel} tag
+	 */
+	function renderTag({name, type, desc, text}) {
+		<li class="tag">
+			<span class="name">${name}</span>
+			if(type) {
+				<span class="type">${type}</span>
+			}
+			if (desc) {
+				<span class="desc">
+					out(markup(desc));
+				</span>
+			}
+			if (text) {
+				<span class="text">
+					out(markup(text));
+				</span>
+			}
+		</li>
+	}
+}

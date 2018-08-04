@@ -1,0 +1,23 @@
+/**
+ * The `<this>` tag is be used to assign attributes and callbacks 
+ * to the spirts own (root) element from within the EDBML script.
+ * @param {number} scenario
+ * @param {string} classname
+ * @param {string} tooltip
+ * @param {Function} action
+ */
+export default function(scenario, classname, tooltip, action) {
+	switch(scenario) {
+		case 0:
+			<p>No root element!</p>
+			break;
+		case 1:
+			@class = classname || null;
+			@title = tooltip || null;
+			<this @class @title></this>
+			break;
+		case 2:
+			<this guid="hansen" on:click="${action()}"></this>
+			break;
+	}
+}

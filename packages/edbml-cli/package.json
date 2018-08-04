@@ -1,0 +1,12 @@
+{
+	"name": "@dataplastique/edbml-cli",
+	"version": "0.0.1",
+	"module": "index.js",
+	"main": "main.js",
+	"bin": {
+		"edbml": "./bin/edbml-cli.js"
+	},
+	"scripts": {
+		"prebuild": "rollup --config"
+	}
+}

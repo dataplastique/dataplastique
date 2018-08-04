@@ -1,0 +1,10 @@
+/**
+ * @param {PersonCollection} persons
+ */
+export default function(persons) {
+	<ul>
+		persons.forEach(person => {
+			<li>${person.name}</li>
+		});
+	</ul>
+}

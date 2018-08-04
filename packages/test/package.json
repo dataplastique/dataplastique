@@ -1,0 +1,14 @@
+{
+	"name": "@dataplastique/test",
+	"version": "0.0.1",
+	"scripts": {
+		"build-tests": "npm run build-tests:iso && npm run build-tests:web",
+		"build-tests:iso": "rollup --config rollup.config.iso.js",
+		"build-tests:web": "edbml src/gui/edbml && rollup --config rollup.config.web.js"
+	},
+	"dependencies": {
+		"dataplastique": "0.0.1",
+		"@dataplastique/edbml-cli": "0.0.1",
+		"@dataplastique/util": "0.0.1"
+	}
+}
